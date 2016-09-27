@@ -12,28 +12,47 @@ public class MovingPlatform : MonoBehaviour {
     [SerializeField]
     float platformSpeed;
 
+    [SerializeField]
+    Transform[] endPoints;
+
+    int currentPos;
+    int dir;
+
     Vector3 direction;
     Transform destination;
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(startTransform.position, platform.localScale);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(endTransform.position, platform.localScale);       
+        for ( int i = 0; i < endPoints.Length; i++)
+        {
+            Gizmos.DrawWireCube(endPoints[i].position, platform.localScale);
+        }     
     }
 
     void Start()
     {
-        setDestination(endTransform);
+        currentPos = 0;
+        dir = 1;
+        setDestination(endPoints[currentPos]);
     }          
 
     void FixedUpdate()
     {
         platform.GetComponent<Rigidbody>().MovePosition(platform.position + direction * platformSpeed * Time.fixedDeltaTime);
-        if (Vector3.Distance(platform.position, destination.position) < Time.fixedDeltaTime * platformSpeed)
-        {
-            setDestination(destination == startTransform ? endTransform : startTransform);
+        if (Vector3.Distance(platform.position, destination.position) <= Time.fixedDeltaTime * platformSpeed * 1.5f)
+        {                        
+            if (currentPos >= endPoints.Length - 1)
+            {
+                dir = -1;
+            }
+            else if (currentPos <= 0)
+            {
+                dir = 1;
+            }
+            currentPos += dir;
+            Debug.Log(currentPos);
+            setDestination(endPoints[currentPos]);
         }
     }
 
