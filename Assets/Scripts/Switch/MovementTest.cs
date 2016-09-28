@@ -7,7 +7,8 @@ public class MovementTest : MonoBehaviour {
     List<Collider> inColliders = new List<Collider>();
     void Update()
     {
-        transform.Translate(moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
+        transform.Translate(moveSpeed * Input.GetAxis("Horizontal") * 
+            Time.deltaTime, 0f, moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
         if (Input.GetButtonDown("Fire1"))
         {
             inColliders.ForEach(n => n.SendMessage("Use", SendMessageOptions.DontRequireReceiver));
