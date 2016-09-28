@@ -39,7 +39,9 @@ public class MovingPlatform : MonoBehaviour {
 
     void FixedUpdate()
     {
-        platform.GetComponent<Rigidbody>().MovePosition(platform.position + direction * platformSpeed * Time.fixedDeltaTime);
+//        platform.GetComponent<Rigidbody>().MovePosition(platform.position + direction * platformSpeed * Time.fixedDeltaTime);
+//        platform.position = Vector3.Lerp(platform.position, destination.position, platformSpeed * Time.fixedDeltaTime);
+        platform.position = Vector3.MoveTowards(platform.position, destination.position, platformSpeed * Time.fixedDeltaTime);
         if (Vector3.Distance(platform.position, destination.position) <= Time.fixedDeltaTime * platformSpeed * 1.5f)
         {                        
             if (currentPos >= endPoints.Length - 1)
