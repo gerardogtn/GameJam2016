@@ -177,6 +177,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &401108633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 401108635}
+  - 114: {fileID: 401108634}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &401108634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401108633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d51512ee5a2470cb0f497d38ea10dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &401108635
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401108633}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.9183006, y: 21.254478, z: -2.9101028}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &504270881
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +293,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1335302364}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.13
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -350,10 +390,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 05d67c423b06f45549c14e7768d0da10, type: 3}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 6
     m_AlignByGeometry: 0
@@ -710,6 +750,7 @@ MonoBehaviour:
   totalDurationDefault: 3
   waitTimeBeforeDefault: 0
   waitTimeAfterDefault: 0
+  audioManager: {fileID: 401108634}
 --- !u!4 &1665461261
 Transform:
   m_ObjectHideFlags: 0
@@ -736,7 +777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - '> hola'
-  - <b>Hola</b>, esto es una segunda <color=#19E222FF>prueba</color>
+  - <b>Hola</b>, esto es una <i>segunda</i> <color=#19E222FF>prueba</color>
   - Hola, <color=#FF5733>esto es una</color> prueba
   terminal: {fileID: 1665461260}
 --- !u!1 &1782723869
