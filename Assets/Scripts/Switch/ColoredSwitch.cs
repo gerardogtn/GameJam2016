@@ -9,11 +9,6 @@ public class ColoredSwitch : LiteSwitch {
 
 	public Colors color;
 
-	public ColoredSwitch() {
-		onMessage = "Open";
-		offMessage = "Close";
-	}
-
 	void Use() {
 		Toggle();
 	}
