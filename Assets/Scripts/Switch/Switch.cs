@@ -9,61 +9,58 @@ public class Switch : MonoBehaviour {
     [SerializeField]
     string offMessage;
     [SerializeField]
-    bool isOn;
+    protected bool isOn;
     [SerializeField]
-    float resetTime;
+    protected float resetTime;
     public List<GameObject> targets = new List<GameObject>();
     public enum ResetType {Never, OnUse, Timed, Immediately}
     public ResetType resetType = ResetType.OnUse;
 
 
-    public void TurnOn()
+    public virtual void TurnOn()
     {
-        if (!isOn)
-            setState(true);
+		if (!isOn)
+			setActive ();
     }
 
-    public void TurnOff()
+    public virtual void TurnOff()
     {
-        if (isOn && resetType != ResetType.Never && resetType != ResetType.Timed)
-            setState(false);
+		if (isOn && resetType != ResetType.Never && resetType != ResetType.Timed)
+			setInactive ();
     }
 
     public void TimedReset()
     {
-        setState(false);
+		setInactive ();
     }
 
     public void Toggle()
     {
-        if (isOn)
-            TurnOff();
-        else
-            TurnOn();
+		if (isOn) {
+			TurnOff ();
+		} else {
+			TurnOn ();
+		}
     }
 
-    void setState(bool _isOn)
-    {
-        isOn = _isOn;
-        if (isOn)
-        {
-            if (targets.Count > 0 && !string.IsNullOrEmpty(onMessage))
-            {
-                targets.ForEach(n => n.SendMessage(onMessage));
-            }
-            if (resetType == ResetType.Immediately)
-                TurnOff();
-            else if (resetType == ResetType.Timed)
-            {
-                Invoke("TimedReset", resetTime);
-            }
-        }
-        else
-        {
-            if (targets.Count > 0 && !string.IsNullOrEmpty(offMessage))
-            {
-                targets.ForEach(n => n.SendMessage(offMessage));
-            }
-        }
+	protected virtual void setActive() {
+		isOn = true; 
+		if (targets.Count > 0 && !string.IsNullOrEmpty(onMessage))
+		{
+			targets.ForEach(n => n.SendMessage(onMessage));
+		}
+		if (resetType == ResetType.Immediately)
+			TurnOff();
+		else if (resetType == ResetType.Timed)
+		{
+			Invoke("TimedReset", resetTime);
+		}
+	}
+
+    protected virtual void setInactive() {
+		isOn = false;
+		if (targets.Count > 0 && !string.IsNullOrEmpty(offMessage)) {
+			targets.ForEach (n => n.SendMessage(offMessage));
+		}
     }
 }
