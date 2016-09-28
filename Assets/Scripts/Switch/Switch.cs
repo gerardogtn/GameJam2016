@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public class Switch : MonoBehaviour {
 
     [SerializeField]
-    string onMessage;
+    protected string onMessage;
     [SerializeField]
-    string offMessage;
+    protected string offMessage;
     [SerializeField]
     protected bool isOn;
     [SerializeField]

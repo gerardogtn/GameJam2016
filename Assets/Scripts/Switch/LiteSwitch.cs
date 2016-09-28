@@ -5,7 +5,7 @@ public class LiteSwitch : Switch {
 
 	protected override void setActive ()
 	{
-		isOn = true; 
+		base.isOn = true; 
 		if (resetType == ResetType.Immediately)
 			TurnOff();
 		else if (resetType == ResetType.Timed)
@@ -15,6 +15,6 @@ public class LiteSwitch : Switch {
 	}
 
 	protected override void setInactive() {
-		isOn = false;
+		base.isOn = false;
 	}
 }
