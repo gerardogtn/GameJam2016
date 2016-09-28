@@ -6,10 +6,6 @@ public class MovingPlatform : MonoBehaviour {
     [SerializeField]
     Transform platform;
     [SerializeField]
-    Transform startTransform;
-    [SerializeField]
-    Transform endTransform;
-    [SerializeField]
     float platformSpeed;
 
     [SerializeField]
