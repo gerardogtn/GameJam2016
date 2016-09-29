@@ -13,6 +13,8 @@ public class AutoWrite : MonoBehaviour {
     float waitTimeBeforeDefault = 0.0f;
     [SerializeField]
     float waitTimeAfterDefault = 0.0f;
+    [SerializeField]
+    AudioManager audioManager;
 
     private CoroutineQueue coroutineQueue;
 
@@ -24,7 +26,7 @@ public class AutoWrite : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    
 	}
 
     public void WriteToTerminal(string text, float? _totalDuration = null ,  float? _waitTimeBefore = null, 
@@ -43,7 +45,7 @@ public class AutoWrite : MonoBehaviour {
     {
         int characterIndex = 0;
         while (characterIndex < text.Length)
-        {
+        {            
             int openCounter = 0;
             int closeCounter = 0;
             int firstTagStart = 0;
@@ -97,7 +99,8 @@ public class AutoWrite : MonoBehaviour {
                     int newIndex = textArea.text.Length;
                     textArea.text += tagClose;
                     for (int i = 0; i < richText.Length; i++)
-                    {                                        
+                    {              
+                        audioManager.PlaySound("terminal");
                         yield return new WaitForSeconds(totalDuration / text.Length);
                         textArea.text = textArea.text.Insert(newIndex + i, "" + richText[i]);
                     }  
@@ -109,12 +112,14 @@ public class AutoWrite : MonoBehaviour {
             }
             else
             {
+                audioManager.PlaySound("terminal");
                 yield return new WaitForSeconds(totalDuration/text.Length);
                 textArea.text += text[characterIndex];
                 characterIndex++;
             }
         }
         textArea.text += "\n";
+        audioManager.StopSound("terminal");
     }
         
 }

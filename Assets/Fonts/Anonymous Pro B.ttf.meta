@@ -13,6 +13,8 @@ TrueTypeFontImporter:
   - Anonymous Pro
   fallbackFontReferences:
   - {fileID: 12800000, guid: 05d67c423b06f45549c14e7768d0da10, type: 3}
+  - {fileID: 12800000, guid: 9cf06ea654ce0484ab790647dbcbf2a1, type: 3}
+  - {fileID: 12800000, guid: 4d0ceae881c904acab0cd8dcb150f6d6, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
