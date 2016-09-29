@@ -12,6 +12,7 @@ public class MovingPlatform : MonoBehaviour {
     [SerializeField]
     Transform[] endPoints;
 
+
     int currentPos;
     int dir;
 
@@ -33,6 +34,14 @@ public class MovingPlatform : MonoBehaviour {
     {
         currentPos = 0;
         dir = 1;
+        Material mat = Resources.Load<Material>("Materials/line");
+        if (!gameObject.GetComponent<LineRenderer>())
+        {
+            gameObject.AddComponent<LineRenderer>();
+            lineRenderer = gameObject.GetComponent<LineRenderer>();
+            lineRenderer.SetWidth(0.2f, 0.2f);
+            lineRenderer.material = mat;
+        }
         lineRenderer = gameObject.GetComponent<LineRenderer>();
         setLines();
         setDestination(endPoints[currentPos]);
@@ -45,7 +54,10 @@ public class MovingPlatform : MonoBehaviour {
         {            
             positions.Add(pos.position);
         }
+        lineRenderer.SetVertexCount(positions.Count);
         lineRenderer.SetPositions(positions.ToArray());
+        Vector3 dist = positions[1] - positions[0];
+        lineRenderer.materials[0].mainTextureScale = new Vector2(dist.magnitude * 3f, 1f);
     }
 
     void FixedUpdate()
