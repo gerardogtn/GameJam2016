@@ -34,7 +34,7 @@ public class Switch : MonoBehaviour {
 		setInactive ();
     }
 
-    public void Toggle()
+    public virtual void Toggle()
     {
 		if (isOn) {
 			TurnOff ();
