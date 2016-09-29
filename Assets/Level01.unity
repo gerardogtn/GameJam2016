@@ -8665,7 +8665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c832f5091aaf45f29178923d8bc301a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchMessage: Press "Rt" to toggle.
+  switchKeyboardMessage: Press "Rt" to toggle.
+  switchControllerMessage: Press "Mouse 1" to toggle.
   switchMessageDuration: 0.5
 --- !u!114 &1598551387
 MonoBehaviour:
@@ -8679,7 +8680,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - message: Prueba
+  - keyboardMessage: prueba
+    controllerMessage: mi prueba control
     totalDuration: 1
     beforeTime: 0
     afterTime: 0
