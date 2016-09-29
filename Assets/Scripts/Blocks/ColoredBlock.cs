@@ -4,6 +4,7 @@ using System.Collections;
 public class ColoredBlock : ColorReceiver {
 
 	public Colors color; 
+	int currentKnocks;
 
 	public override void Start() {
 		base.Start ();

@@ -39,4 +39,10 @@ public class LevelManager {
 		activeColor = activeColor.Remove (color);
 		OnLightChanged (activeColor);
 	}
+
+	// Set color 
+	public void setColor(Colors color) {
+		activeColor = color;
+		OnLightChanged (color); 
+	}
 }
