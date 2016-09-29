@@ -24,7 +24,7 @@ public class FullScreenSender : MonoBehaviour {
     }
         
     void sendMessages()
-    {
+    {        
         sentMessages = true;
         for (int i = 0; i < messages.Count; i++)
         {
