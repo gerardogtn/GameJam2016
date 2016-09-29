@@ -76,7 +76,7 @@ public class MovingPlatform : MonoBehaviour {
                 dir = 1;
             }
             currentPos += dir;
-            Debug.Log(currentPos);
+//            Debug.Log(currentPos);
             setDestination(endPoints[currentPos]);
         }
     }
