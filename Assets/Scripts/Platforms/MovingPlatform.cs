@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MovingPlatform : MonoBehaviour {
 
@@ -17,6 +18,8 @@ public class MovingPlatform : MonoBehaviour {
     Vector3 direction;
     Transform destination;
 
+    LineRenderer lineRenderer;
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -30,8 +33,20 @@ public class MovingPlatform : MonoBehaviour {
     {
         currentPos = 0;
         dir = 1;
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
+        setLines();
         setDestination(endPoints[currentPos]);
-    }          
+    }      
+
+    void setLines()
+    {
+        List<Vector3> positions = new List<Vector3>();
+        foreach (Transform pos in endPoints)
+        {            
+            positions.Add(pos.position);
+        }
+        lineRenderer.SetPositions(positions.ToArray());
+    }
 
     void FixedUpdate()
     {
