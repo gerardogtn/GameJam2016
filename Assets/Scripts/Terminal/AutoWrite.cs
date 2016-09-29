@@ -13,16 +13,28 @@ public class AutoWrite : MonoBehaviour {
     float waitTimeBeforeDefault = 0.0f;
     [SerializeField]
     float waitTimeAfterDefault = 0.0f;
-    [SerializeField]
-    AudioManager audioManager;
+
+    AudioManager audioManager;   
 
     private CoroutineQueue coroutineQueue;
 
+    public static AutoWrite instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start(){
+        audioManager = AudioManager.instance;
         coroutineQueue = new CoroutineQueue(this);
         coroutineQueue.StartLoop();
     }
+        
 	
 	// Update is called once per frame
 	void Update () {
@@ -36,13 +48,17 @@ public class AutoWrite : MonoBehaviour {
         float _waitTimeBeforeInit = _waitTimeBefore ?? waitTimeBeforeDefault;
         float _waitTimeAfterInit = _waitTimeAfter ?? waitTimeAfterDefault;
 
-        coroutineQueue.EnqueueWait(_waitTimeBeforeInit);
-        coroutineQueue.EnqueueAction(WriteString(text, _totalDurationInit, _waitTimeBeforeInit, _waitTimeAfterInit));
-        coroutineQueue.EnqueueWait(_waitTimeAfterInit);
+        if(_waitTimeBeforeInit != 0)
+            coroutineQueue.EnqueueWait(_waitTimeBeforeInit);
+        coroutineQueue.EnqueueAction(WriteString(text, _totalDurationInit));
+        if(_waitTimeAfterInit != 0)
+            coroutineQueue.EnqueueWait(_waitTimeAfterInit);
     }
 
-    IEnumerator WriteString(string text, float totalDuration, float _waitTimeBefore, float _waitTimeAfter)
+    IEnumerator WriteString(string text, float totalDuration)
     {
+        if (totalDuration == 0)
+            totalDuration = totalDurationDefault;
         int characterIndex = 0;
         while (characterIndex < text.Length)
         {            
