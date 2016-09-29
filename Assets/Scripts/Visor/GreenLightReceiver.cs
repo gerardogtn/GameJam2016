@@ -15,7 +15,7 @@ public class GreenLightReceiver: ColorReceiver {
 	}
 
 	public override void OnColorReceived(Colors color) {
-		if (color == Colors.Blue || color == Colors.Yellow || color == Colors.Cyan || color == Colors.White) {
+		if (color == Colors.Green || color == Colors.Yellow || color == Colors.Cyan || color == Colors.White) {
 			this.Image.sprite = EnabledSprite;
 		} else {
 			this.Image.sprite = DisabledSprite;
