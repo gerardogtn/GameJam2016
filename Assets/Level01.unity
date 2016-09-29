@@ -7549,7 +7549,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh39358
+  m_Name: pb_Mesh18536
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -9090,7 +9090,6 @@ GameObject:
   - 114: {fileID: 1673583307}
   - 64: {fileID: 1673583306}
   - 114: {fileID: 1673583305}
-  - 114: {fileID: 1673583312}
   m_Layer: 0
   m_Name: DoorBlock
   m_TagString: Untagged
@@ -9499,18 +9498,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
---- !u!114 &1673583312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1673583304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe17c56dd68c45db9169f81cdaa99a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: 0
 --- !u!1 &1677718887 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011294714334, guid: f22eaa63b466040aea42df6ac2d08dc5,
