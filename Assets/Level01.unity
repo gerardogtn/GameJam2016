@@ -1132,7 +1132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013678234014, guid: e60d308d340634905a013b6d281d6f7a, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1000011365993654, guid: e60d308d340634905a013b6d281d6f7a, type: 2}
       propertyPath: m_Name
@@ -3165,7 +3165,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012696233524, guid: c34651a0c23604ff8a403ff84ff8b8e8, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 64000011747099002, guid: c34651a0c23604ff8a403ff84ff8b8e8,
         type: 2}
@@ -6462,7 +6462,7 @@ Transform:
   - {fileID: 640279092}
   - {fileID: 685772290}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!1001 &1043964574
 Prefab:
   m_ObjectHideFlags: 0
@@ -6500,6 +6500,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7513,7 +7517,7 @@ Transform:
   - {fileID: 1431669341}
   - {fileID: 1954248002}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
 --- !u!43 &1227937999
 Mesh:
   m_ObjectHideFlags: 0
@@ -7807,7 +7811,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012696233524, guid: c34651a0c23604ff8a403ff84ff8b8e8, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 64000011747099002, guid: c34651a0c23604ff8a403ff84ff8b8e8,
         type: 2}
@@ -9407,7 +9411,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 18
 --- !u!1001 &1712152119
 Prefab:
   m_ObjectHideFlags: 0
@@ -18209,7 +18213,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!1 &1954248001
 GameObject:
   m_ObjectHideFlags: 0
