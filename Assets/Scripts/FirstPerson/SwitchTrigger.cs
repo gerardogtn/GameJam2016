@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class SwitchTrigger : MonoBehaviour {
 
-	public float moveSpeed;
 	HashSet<Collider> inColliders = new HashSet<Collider>();
 	void Update()
 	{
@@ -14,7 +13,7 @@ public class SwitchTrigger : MonoBehaviour {
 	}
 
 	bool IsSwitchedTriggered() {
-		return Input.GetButtonDown ("Fire1"); 
+		return Input.GetButtonDown ("ToggleSwitch"); 
 	}
 
 	void Trigger() {

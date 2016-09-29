@@ -11,7 +11,7 @@ Shader "FX/Gem"
 	}
 	SubShader {
 		Tags {
-			"Queue" = "Transparent"
+			"Queue" = "Background"
 		}
 		// First pass - here we render the backfaces of the diamonds. Since those diamonds are more-or-less
 		// convex objects, this is effectively rendering the inside of them.
