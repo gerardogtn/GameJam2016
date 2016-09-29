@@ -4,7 +4,7 @@ using System.Collections;
 public enum CRTScanLinesSizes {S32=32,S64=64,S128=128,S256=256,S512=512,S1024=1024};
 
 [ExecuteInEditMode]
-public class CRT : MonoBehaviour {
+public class CRT : ColorReceiver {
 
     #region Variables
     public Shader curShader;
@@ -36,8 +36,9 @@ public class CRT : MonoBehaviour {
     }
     #endregion
     // Use this for initialization
-    void Start ()
+    public override void Start ()
     {
+		base.Start ();
         if(!SystemInfo.supportsImageEffects)
         {
             enabled = false;
@@ -86,6 +87,40 @@ public class CRT : MonoBehaviour {
         }
 
     }
+
+	public override void OnColorReceived(Colors color) {
+		if (color == Colors.Black) {
+			rgb1 = new Color (0.365f, 0.365f, 0.365f);
+			Gamma = 1.12f; 
+			return;
+		}
+
+		Gamma = 1.0f;
+		switch (color) {
+		case Colors.Red:
+			rgb1 = new Color (0.926f, 0.635f, 0.635f);
+			break;
+		case Colors.Green:
+			rgb1 = new Color (0.518f, 0.718f, 0.502f);
+			break;
+		case Colors.Blue:
+			rgb1 = new Color (0.510f, 0.502f, 0.718f);
+			break;
+		case Colors.Cyan:
+			rgb1 = new Color (0.561f, 0.788f, 0.800f);
+			break;
+		case Colors.Yellow:
+			rgb1 = new Color(0.780f, 0.800f, 0.500f);
+			break;
+		case Colors.Magenta:
+			rgb1 = new Color (0.790f, 0.500f, 0.800f);
+			break;
+		case Colors.White:
+			rgb1 = new Color(0.937f, 0.937f, 0.937f);
+			break;
+		}
+
+	}
 
 
 }
