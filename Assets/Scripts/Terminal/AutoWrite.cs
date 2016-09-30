@@ -22,7 +22,6 @@ public class AutoWrite : MonoBehaviour {
 
     void Awake()
     {
-        audioManager = AudioManager.instance;
         coroutineQueue = new CoroutineQueue(this);
         coroutineQueue.StartLoop();
 		Application.targetFrameRate = 300;
@@ -35,7 +34,13 @@ public class AutoWrite : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    public void WriteToTerminal(string text, float? _totalDuration = null ,  float? _waitTimeBefore = null, 
+	void Start(){
+	
+		audioManager = AudioManager.instance;
+	
+	}
+
+    public void WriteToTerminal(string text, bool endOfLine, bool firstLine, float? _totalDuration = null ,  float? _waitTimeBefore = null, 
         float? _waitTimeAfter = null)
     {
         float _totalDurationInit = _totalDuration ?? totalDurationDefault;
@@ -44,16 +49,18 @@ public class AutoWrite : MonoBehaviour {
 
         if(_waitTimeBeforeInit != 0)
             coroutineQueue.EnqueueWait(_waitTimeBeforeInit);
-        coroutineQueue.EnqueueAction(WriteString(text, _totalDurationInit));
+        coroutineQueue.EnqueueAction(WriteString(text, _totalDurationInit, endOfLine, firstLine));
         if(_waitTimeAfterInit != 0)
             coroutineQueue.EnqueueWait(_waitTimeAfterInit);
     }
 
-    IEnumerator WriteString(string text, float totalDuration)
+    IEnumerator WriteString(string text, float totalDuration, bool endOfLine, bool firstLine)
     {
         if (totalDuration == 0)
             totalDuration = totalDurationDefault;
         int characterIndex = 0;
+        if(firstLine)
+            textArea.text += "\n";
         while (characterIndex < text.Length)
         {            
             int openCounter = 0;
@@ -128,7 +135,8 @@ public class AutoWrite : MonoBehaviour {
                 characterIndex++;
             }
         }
-        textArea.text += "\n";
+        if(endOfLine)
+            textArea.text += "\n";
         audioManager.StopSound("terminal");
     }
         
