@@ -32,14 +32,6 @@ public class AutoWrite : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
-    {
-        audioManager = AudioManager.instance;
-        coroutineQueue = new CoroutineQueue(this);
-        coroutineQueue.StartLoop();
-    }
-        
-	
 	// Update is called once per frame
 	void Start () {
 		audioManager = AudioManager.instance;

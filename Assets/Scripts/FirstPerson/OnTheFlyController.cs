@@ -3,6 +3,8 @@ using System.Collections;
 
 public class OnTheFlyController : MonoBehaviour {
 
+    [SerializeField]
+    bool isBlueActive;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,7 +18,7 @@ public class OnTheFlyController : MonoBehaviour {
 		if (IsGreenTriggered ()) {
 			Toggle (Colors.Green);
 		}
-		if (IsBlueTriggered ()) {
+        if (IsBlueTriggered () && isBlueActive) {
 			Toggle (Colors.Blue);
 		}
 	}

@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692528, g: 0.49678677, b: 0.57508475, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692492, g: 0.4967869, b: 0.57508546, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -834,7 +834,7 @@ Prefab:
     - target: {fileID: 224000010798537110, guid: 9ccfab9055dd74a579fe2741d9b4a767,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -42.0245
+      value: -42.543056
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ccfab9055dd74a579fe2741d9b4a767, type: 2}
@@ -1097,6 +1097,21 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9a52590b5903048a1ab965e008ff9efc, type: 2}
+    - target: {fileID: 114000013437843360, guid: f22eaa63b466040aea42df6ac2d08dc5,
+        type: 2}
+      propertyPath: platform
+      value: 
+      objectReference: {fileID: 1677718888}
+    - target: {fileID: 114000013437843360, guid: f22eaa63b466040aea42df6ac2d08dc5,
+        type: 2}
+      propertyPath: endPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1439006329}
+    - target: {fileID: 114000013437843360, guid: f22eaa63b466040aea42df6ac2d08dc5,
+        type: 2}
+      propertyPath: endPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1458545786}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f22eaa63b466040aea42df6ac2d08dc5, type: 2}
   m_IsPrefabParent: 0
@@ -4493,7 +4508,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh11320
+  m_Name: pb_Mesh12820
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -7507,9 +7522,39 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9a52590b5903048a1ab965e008ff9efc, type: 2}
+    - target: {fileID: 114000013437843360, guid: f22eaa63b466040aea42df6ac2d08dc5,
+        type: 2}
+      propertyPath: platform
+      value: 
+      objectReference: {fileID: 1176785579}
+    - target: {fileID: 114000013437843360, guid: f22eaa63b466040aea42df6ac2d08dc5,
+        type: 2}
+      propertyPath: endPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1176785578}
+    - target: {fileID: 114000013437843360, guid: f22eaa63b466040aea42df6ac2d08dc5,
+        type: 2}
+      propertyPath: endPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1176785577}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f22eaa63b466040aea42df6ac2d08dc5, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1176785577 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000010995381460, guid: f22eaa63b466040aea42df6ac2d08dc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1176785576}
+--- !u!4 &1176785578 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000011879050824, guid: f22eaa63b466040aea42df6ac2d08dc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1176785576}
+--- !u!4 &1176785579 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000010807087704, guid: f22eaa63b466040aea42df6ac2d08dc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1176785576}
 --- !u!1 &1189263588
 GameObject:
   m_ObjectHideFlags: 0
@@ -8649,53 +8694,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
---- !u!1 &1598551385 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000014030980512, guid: a45c0b5c920fb4f7e91bbd2a12de5201,
+--- !u!4 &1439006329 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000011879050824, guid: f22eaa63b466040aea42df6ac2d08dc5,
     type: 2}
-  m_PrefabInternal: {fileID: 615693751}
---- !u!114 &1598551386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1598551385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c832f5091aaf45f29178923d8bc301a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchKeyboardMessage: Press "Rt" to toggle.
-  switchControllerMessage: Press "Mouse 1" to toggle.
-  switchMessageDuration: 0.5
---- !u!114 &1598551387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1598551385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9702a5cc8f0444989150f6fa30e2261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messages:
-  - keyboardMessage: '>man light_switch  '
-    controllerMessage: mi prueba control
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: LIGHT_SWITCH
-    controllerMessage: mi prueba control
-    totalDuration: 0.5
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: Interact with light switches using RT. Light switches may open
-      a new spectrum of  possibilities.
-    controllerMessage: mi prueba control
-    totalDuration: 4.5
-    beforeTime: 0
-    afterTime: 0
+  m_PrefabInternal: {fileID: 295484895}
+--- !u!4 &1458545786 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000010995381460, guid: f22eaa63b466040aea42df6ac2d08dc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 295484895}
 --- !u!1 &1607687028
 GameObject:
   m_ObjectHideFlags: 0
