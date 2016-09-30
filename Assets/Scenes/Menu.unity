@@ -2482,7 +2482,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 866101350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f3275081ab04e8c88f9f02fee15247, type: 3}
+  m_Script: {fileID: 11500000, guid: 51f72687cbd064e87adf0ea210bf0eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1127452391
@@ -2616,7 +2616,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1127452391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f3275081ab04e8c88f9f02fee15247, type: 3}
+  m_Script: {fileID: 11500000, guid: 51f72687cbd064e87adf0ea210bf0eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1138093562
@@ -3120,7 +3120,7 @@ GameObject:
   - 222: {fileID: 2050701268}
   - 114: {fileID: 2050701267}
   - 114: {fileID: 2050701266}
-  - 114: {fileID: 2050701270}
+  - 114: {fileID: 2050701269}
   m_Layer: 5
   m_Name: CreditsButton
   m_TagString: Untagged
@@ -3186,7 +3186,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2050701270}
+      - m_Target: {fileID: 2050701269}
         m_MethodName: GoToCredits
         m_Mode: 1
         m_Arguments:
@@ -3232,7 +3232,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2050701264}
---- !u!114 &2050701270
+--- !u!114 &2050701269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -3240,7 +3240,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2050701264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f3275081ab04e8c88f9f02fee15247, type: 3}
+  m_Script: {fileID: 11500000, guid: 51f72687cbd064e87adf0ea210bf0eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2064699921

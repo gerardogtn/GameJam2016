@@ -2,9 +2,21 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class SceneTransitionManager : MonoBehaviour {
+public class SceneTransitionManager {
 
 	static int current = 0; 
+	private static SceneTransitionManager Instance;
+
+	private SceneTransitionManager() {
+
+	}
+
+	public static SceneTransitionManager GetInstance() {
+		if (Instance == null) {
+			Instance = new SceneTransitionManager ();
+		}
+		return Instance;
+	}
 
 	public void Reload() {
 		GoTo (current);

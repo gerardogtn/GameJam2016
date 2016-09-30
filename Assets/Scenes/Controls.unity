@@ -907,7 +907,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 724527345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f3275081ab04e8c88f9f02fee15247, type: 3}
+  m_Script: {fileID: 11500000, guid: 51f72687cbd064e87adf0ea210bf0eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &724527348
@@ -950,7 +950,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 724527347}
-        m_MethodName: GoToMainMenu
+        m_MethodName: GoToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
