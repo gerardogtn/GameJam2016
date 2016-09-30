@@ -2364,7 +2364,7 @@ GameObject:
   - 114: {fileID: 866101352}
   - 114: {fileID: 866101355}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2429,8 +2429,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 866101355}
-        m_MethodName: LoadByIndex
-        m_Mode: 3
+        m_MethodName: GoToTransitionOne
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2482,7 +2482,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 866101350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2336f1bf94aa2495d976d2d63ccaaad3, type: 3}
+  m_Script: {fileID: 11500000, guid: 38f3275081ab04e8c88f9f02fee15247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1127452391
@@ -2498,7 +2498,7 @@ GameObject:
   - 114: {fileID: 1127452393}
   - 114: {fileID: 1127452396}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: ControlsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2517,7 +2517,7 @@ RectTransform:
   m_Children:
   - {fileID: 1138093563}
   m_Father: {fileID: 1570873313}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 100.999985, y: -100}
@@ -2563,8 +2563,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1127452396}
-        m_MethodName: LoadByIndex
-        m_Mode: 3
+        m_MethodName: GoToControls
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2616,7 +2616,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1127452391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2336f1bf94aa2495d976d2d63ccaaad3, type: 3}
+  m_Script: {fileID: 11500000, guid: 38f3275081ab04e8c88f9f02fee15247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1138093562
@@ -2858,8 +2858,8 @@ RectTransform:
   - {fileID: 99033192}
   - {fileID: 866101351}
   - {fileID: 2050701265}
-  - {fileID: 2041212199}
   - {fileID: 1127452392}
+  - {fileID: 2041212199}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -3010,7 +3010,7 @@ GameObject:
   - 114: {fileID: 2041212201}
   - 114: {fileID: 2041212200}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3029,7 +3029,7 @@ RectTransform:
   m_Children:
   - {fileID: 1408633624}
   m_Father: {fileID: 1570873313}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 101, y: -170}
@@ -3120,9 +3120,9 @@ GameObject:
   - 222: {fileID: 2050701268}
   - 114: {fileID: 2050701267}
   - 114: {fileID: 2050701266}
-  - 114: {fileID: 2050701269}
+  - 114: {fileID: 2050701270}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: CreditsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3186,9 +3186,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2050701269}
-        m_MethodName: LoadByIndex
-        m_Mode: 3
+      - m_Target: {fileID: 2050701270}
+        m_MethodName: GoToCredits
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3232,7 +3232,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2050701264}
---- !u!114 &2050701269
+--- !u!114 &2050701270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -3240,7 +3240,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2050701264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2336f1bf94aa2495d976d2d63ccaaad3, type: 3}
+  m_Script: {fileID: 11500000, guid: 38f3275081ab04e8c88f9f02fee15247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2064699921
