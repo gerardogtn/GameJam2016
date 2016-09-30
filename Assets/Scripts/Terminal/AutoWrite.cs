@@ -54,6 +54,11 @@ public class AutoWrite : MonoBehaviour {
             coroutineQueue.EnqueueWait(_waitTimeAfterInit);
     }
 
+	public void AddAction(IEnumerator action, float waitTime) {
+		coroutineQueue.EnqueueWait (waitTime);
+		coroutineQueue.EnqueueAction (action);
+	}
+
     IEnumerator WriteString(string text, float totalDuration, bool endOfLine, bool firstLine)
     {
         if (totalDuration == 0)

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class FullScreenSender : MonoBehaviour {
 
+	public int nextLevel; 
+
     AutoWrite terminal;
     [System.Serializable]   
     public struct MessageParams{        
@@ -16,17 +18,15 @@ public class FullScreenSender : MonoBehaviour {
 
     public List<MessageParams> messages = new List<MessageParams>();
 
-    bool sentMessages;
-
     void Start()
     {
         terminal = AutoWrite.instance;
         sendMessages();
+		sendGoToNextLevel ();
     }
         
     void sendMessages()
     {        
-        sentMessages = true;
         for (int i = 0; i < messages.Count; i++)
         {
             if (i + 1 == messages.Count && messages.Count != 1)
@@ -52,4 +52,40 @@ public class FullScreenSender : MonoBehaviour {
             }                          
         }
     }    
+
+	IEnumerator LevelOneCoroutine()
+	{
+		SceneTransitionManager.GetInstance ().GoToLevelOne ();
+		yield return null;
+	}
+
+	IEnumerator LevelTwoCoroutine()
+	{
+		SceneTransitionManager.GetInstance ().GoToLevelTwo ();
+		yield return null;
+	}
+
+	IEnumerator LevelThreeCoroutine()
+	{
+		SceneTransitionManager.GetInstance ().GoToLevelThree ();
+		yield return null;
+	}
+
+	IEnumerator LevelFourCoroutine()
+	{
+		SceneTransitionManager.GetInstance ().GoToLevelFour ();
+		yield return null;
+	}
+
+	void sendGoToNextLevel() {
+		if (this.nextLevel == 1) {
+			terminal.AddAction(LevelOneCoroutine (), 0.5f);
+		} else if (this.nextLevel == 2) {
+			terminal.AddAction(LevelTwoCoroutine (), 0.5f);
+		} else if (this.nextLevel == 3) {
+			terminal.AddAction(LevelThreeCoroutine (), 0.5f);
+		} else if (this.nextLevel == 4) {
+			terminal.AddAction(LevelFourCoroutine (), 0.5f);
+		}
+	}
 }
