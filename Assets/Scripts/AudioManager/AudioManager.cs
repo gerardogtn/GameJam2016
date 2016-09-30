@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class AudioManager : MonoBehaviour {
 
     Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
-    private Dictionary<string, AudioSource> audioSources = new Dictionary<string, AudioSource>();
+    public Dictionary<string, AudioSource> audioSources = new Dictionary<string, AudioSource>();
 
     public static AudioManager instance = null;
 
@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour {
         else if (instance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
+        InitClips();
     }
 
     [System.Serializable]
@@ -51,6 +52,12 @@ public class AudioManager : MonoBehaviour {
         {
             audioClips.Add(assets[i].name, assets[i].clip);
         }
+        InitSources();
+    }
+
+    public AudioSource GetAudioSource(string audioSourceName)
+    {
+        return audioSources[audioSourceName];
     }
 
     public void PlaySound(string audioClipName)
@@ -70,9 +77,7 @@ public class AudioManager : MonoBehaviour {
     }
 
 	// Use this for initialization
-	void Start () {       
-        InitClips();
-        InitSources();
+	void Start () {               
 	}          
 	
 	// Update is called once per frame
