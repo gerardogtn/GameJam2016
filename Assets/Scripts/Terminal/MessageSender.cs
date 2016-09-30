@@ -7,7 +7,8 @@ public class MessageSender : MonoBehaviour {
     AutoWrite terminal;
     [System.Serializable]   
     public struct MessageParams{        
-        public string message;
+        public string keyboardMessage;
+        public string controllerMessage;
         public float totalDuration;
         public float beforeTime;
         public float afterTime;
@@ -16,26 +17,49 @@ public class MessageSender : MonoBehaviour {
     public List<MessageParams> messages = new List<MessageParams>();
 
     bool sentMessages;
+    [SerializeField]
+    bool isSwitch;
+
+    Constants constants;
 
     void Start()
     {
+        constants = Constants.instance;
         terminal = AutoWrite.instance;
+        if (isSwitch)
+        {
+            MessageParams msg = new MessageParams();
+            msg.keyboardMessage = constants.switchKeyboardMessage;
+            msg.controllerMessage = constants.switchControllerMessage;
+            msg.totalDuration = constants.switchMessageDuration;
+            messages.Add(msg);
+        }
     }
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "Player" && !sentMessages)
+        if (col.tag == "Player" && col.isTrigger)
         {
-            sendMessages();
+            if (!sentMessages && !isSwitch)
+            {
+                sendMessages();
+                sentMessages = true;
+            }
+            if (isSwitch)
+            {               
+                sendMessages();
+            }
         }
     }
 
     void sendMessages()
-    {
-        sentMessages = true;
+    {        
         for (int i = 0; i < messages.Count; i++)
         {
-            terminal.WriteToTerminal(messages[i].message, messages[i].totalDuration, messages[i].beforeTime, messages[i].afterTime);
+            if(Input.GetJoystickNames().Length > 0)
+                terminal.WriteToTerminal(messages[i].controllerMessage != "" ? messages[i].controllerMessage : messages[i].keyboardMessage , messages[i].totalDuration, messages[i].beforeTime, messages[i].afterTime);
+            else
+                terminal.WriteToTerminal(messages[i].keyboardMessage, messages[i].totalDuration, messages[i].beforeTime, messages[i].afterTime);
         }
     }        
         

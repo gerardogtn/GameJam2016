@@ -7,7 +7,8 @@ public class FullScreenSender : MonoBehaviour {
     AutoWrite terminal;
     [System.Serializable]   
     public struct MessageParams{        
-        public string message;
+        public string keyboardMessage;
+        public string controllerMessage;
         public float totalDuration;
         public float beforeTime;
         public float afterTime;
@@ -24,11 +25,14 @@ public class FullScreenSender : MonoBehaviour {
     }
         
     void sendMessages()
-    {
+    {        
         sentMessages = true;
         for (int i = 0; i < messages.Count; i++)
         {
-            terminal.WriteToTerminal(messages[i].message, messages[i].totalDuration, messages[i].beforeTime, messages[i].afterTime);
+            if(Input.GetJoystickNames().Length > 0)
+                terminal.WriteToTerminal(messages[i].controllerMessage != "" ? messages[i].controllerMessage : messages[i].keyboardMessage , messages[i].totalDuration, messages[i].beforeTime, messages[i].afterTime);
+            else
+                terminal.WriteToTerminal(messages[i].keyboardMessage, messages[i].totalDuration, messages[i].beforeTime, messages[i].afterTime);
         }
     }    
 }

@@ -794,6 +794,7 @@ MonoBehaviour:
     totalDuration: 3
     beforeTime: 0
     afterTime: 0
+  isSwitch: 0
 --- !u!1001 &828223229
 Prefab:
   m_ObjectHideFlags: 0
@@ -1214,6 +1215,7 @@ MonoBehaviour:
     totalDuration: 1.5
     beforeTime: 1.5
     afterTime: 0
+  isSwitch: 0
 --- !u!1001 &1892938110
 Prefab:
   m_ObjectHideFlags: 0
