@@ -1153,7 +1153,7 @@ GameObject:
   - 114: {fileID: 1547620244}
   - 114: {fileID: 1547620247}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1218,8 +1218,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1547620247}
-        m_MethodName: LoadByIndex
-        m_Mode: 3
+        m_MethodName: GoToMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1547620242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2336f1bf94aa2495d976d2d63ccaaad3, type: 3}
+  m_Script: {fileID: 11500000, guid: 38f3275081ab04e8c88f9f02fee15247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1641375873
