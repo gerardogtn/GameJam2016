@@ -12,7 +12,7 @@
 		_FresnelColor("Alpha(for non-refractive water)", Color) = (0,0,0,1)
 	}
 	SubShader {
-		Tags { "Queue" = "Transparent" "RenderType"="Transparent" }
+		Tags { "Queue" = "Background" "RenderType"="Transparent" }
 		ZWrite on Cull off
 		LOD 0
 		
