@@ -22,6 +22,9 @@ public class AutoWrite : MonoBehaviour {
 
     void Awake()
     {
+        audioManager = AudioManager.instance;
+        coroutineQueue = new CoroutineQueue(this);
+        coroutineQueue.StartLoop();
 		Application.targetFrameRate = 300;
         if (instance == null)
         {
@@ -31,13 +34,6 @@ public class AutoWrite : MonoBehaviour {
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }
-
-	// Update is called once per frame
-	void Start () {
-		audioManager = AudioManager.instance;
-		coroutineQueue = new CoroutineQueue(this);
-		coroutineQueue.StartLoop();
-	}
 
     public void WriteToTerminal(string text, float? _totalDuration = null ,  float? _waitTimeBefore = null, 
         float? _waitTimeAfter = null)
