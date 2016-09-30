@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9702a5cc8f0444989150f6fa30e2261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevel: 0
   messages:
   - keyboardMessage: '>Incoming transmission detected on channel 11 '
     controllerMessage: 
@@ -8518,6 +8519,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013957962134, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
