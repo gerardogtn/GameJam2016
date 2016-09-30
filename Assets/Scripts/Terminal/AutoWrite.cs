@@ -40,7 +40,7 @@ public class AutoWrite : MonoBehaviour {
 	
 	}
 
-    public void WriteToTerminal(string text, bool endOfLine, bool firstLine, float? _totalDuration = null ,  float? _waitTimeBefore = null, 
+    public void WriteToTerminal(string text, bool newLine, float? _totalDuration = null ,  float? _waitTimeBefore = null, 
         float? _waitTimeAfter = null)
     {
         float _totalDurationInit = _totalDuration ?? totalDurationDefault;
@@ -49,17 +49,17 @@ public class AutoWrite : MonoBehaviour {
 
         if(_waitTimeBeforeInit != 0)
             coroutineQueue.EnqueueWait(_waitTimeBeforeInit);
-        coroutineQueue.EnqueueAction(WriteString(text, _totalDurationInit, endOfLine, firstLine));
+        coroutineQueue.EnqueueAction(WriteString(text, _totalDurationInit, newLine));
         if(_waitTimeAfterInit != 0)
             coroutineQueue.EnqueueWait(_waitTimeAfterInit);
     }
 
-    IEnumerator WriteString(string text, float totalDuration, bool endOfLine, bool firstLine)
+    IEnumerator WriteString(string text, float totalDuration, bool newLine)
     {
         if (totalDuration == 0)
             totalDuration = totalDurationDefault;
         int characterIndex = 0;
-        if(firstLine)
+        if(newLine)
             textArea.text += "\n";
         while (characterIndex < text.Length)
         {            
@@ -135,8 +135,6 @@ public class AutoWrite : MonoBehaviour {
                 characterIndex++;
             }
         }
-        if(endOfLine)
-            textArea.text += "\n";
         audioManager.StopSound("terminal");
     }
         
