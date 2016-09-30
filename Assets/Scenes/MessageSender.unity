@@ -678,7 +678,7 @@ Prefab:
     - target: {fileID: 224000011007234566, guid: d7c537bd6d9694bc7ac60e4876f0b6cc,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -348
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7c537bd6d9694bc7ac60e4876f0b6cc, type: 2}
@@ -786,11 +786,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - message: Soy el segundo cubo
+  - keyboardMessage: 
+    controllerMessage: 
     totalDuration: 2
     beforeTime: 0
     afterTime: 0
-  - message: Soy bien cool
+  - keyboardMessage: 
+    controllerMessage: 
     totalDuration: 3
     beforeTime: 0
     afterTime: 0
@@ -846,7 +848,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh11124
+  m_Name: pb_Mesh18606
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1116,6 +1118,16 @@ Prefab:
       propertyPath: messages.Array.data[0].message
       value: Hola, RAY...
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012248548122, guid: 04aa235a551fd4692ac648da30f1bb47,
+        type: 2}
+      propertyPath: messages.Array.data[0].keyboardMessage
+      value: test
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012248548122, guid: 04aa235a551fd4692ac648da30f1bb47,
+        type: 2}
+      propertyPath: messages.Array.data[0].totalDuration
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04aa235a551fd4692ac648da30f1bb47, type: 2}
   m_IsPrefabParent: 0
@@ -1211,7 +1223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - message: Soy el <b>tercer</b> cubo
+  - keyboardMessage: 
+    controllerMessage: 
     totalDuration: 1.5
     beforeTime: 1.5
     afterTime: 0

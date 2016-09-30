@@ -32,8 +32,6 @@ public class AutoWrite : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-        
-	
 	// Update is called once per frame
 	void Start () {
 		audioManager = AudioManager.instance;
