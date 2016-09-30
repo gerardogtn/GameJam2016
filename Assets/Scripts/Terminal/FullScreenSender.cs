@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class FullScreenSender : MonoBehaviour {
 
-	public int nextLevel; 
+    public int nextLevel; 
+    public bool moveToLevel = true;
 
     AutoWrite terminal;
     [System.Serializable]   
@@ -18,11 +19,19 @@ public class FullScreenSender : MonoBehaviour {
 
     public List<MessageParams> messages = new List<MessageParams>();
 
+
     void Start()
     {
         terminal = AutoWrite.instance;
         sendMessages();
-		sendGoToNextLevel ();
+        if (moveToLevel)
+        {
+            sendGoToNextLevel();
+        }
+        else
+        {
+            sendGoToNextTransition();
+        }
     }
         
     void sendMessages()
@@ -32,8 +41,7 @@ public class FullScreenSender : MonoBehaviour {
                 if (Input.GetJoystickNames().Length > 0)
                     terminal.WriteToTerminal(messages[i].controllerMessage != "" ? messages[i].controllerMessage : messages[i].keyboardMessage, true, messages[i].totalDuration, messages[i].beforeTime, messages[i].afterTime);
                 else
-                    terminal.WriteToTerminal(messages[i].keyboardMessage, true, messages[i].totalDuration, messages[i].beforeTime, messages[i].afterTime);
-            
+                    terminal.WriteToTerminal(messages[i].keyboardMessage, true, messages[i].totalDuration, messages[i].beforeTime, messages[i].afterTime);            
         }
     }    
 
@@ -61,6 +69,31 @@ public class FullScreenSender : MonoBehaviour {
 		yield return null;
 	}
 
+    IEnumerator TransitionTwoCoroutine()
+    {
+        SceneTransitionManager.GetInstance ().GoToTransitionTwo ();
+        yield return null;
+    }
+
+    IEnumerator TransitionThreeCoroutine()
+    {
+        SceneTransitionManager.GetInstance ().GoToTransitionThree ();
+        yield return null;
+    }
+
+    IEnumerator TransitionFourCoroutine()
+    {
+        SceneTransitionManager.GetInstance ().GoToTransitionFour();
+        yield return null;
+    }
+
+    IEnumerator TransitionFiveCoroutine()
+    {
+        SceneTransitionManager.GetInstance ().GoToTransitionFive ();
+        yield return null;
+    }
+
+
 	void sendGoToNextLevel() {
 		if (this.nextLevel == 1) {
 			terminal.AddAction(LevelOneCoroutine (), 0.5f);
@@ -72,4 +105,16 @@ public class FullScreenSender : MonoBehaviour {
 			terminal.AddAction(LevelFourCoroutine (), 0.5f);
 		}
 	}
+
+    void sendGoToNextTransition() {
+        if (this.nextLevel == 2) {
+            terminal.AddAction(TransitionTwoCoroutine (), 0.5f);
+        } else if (this.nextLevel == 3) {
+            terminal.AddAction(TransitionThreeCoroutine (), 0.5f);
+        } else if (this.nextLevel == 4) {
+            terminal.AddAction(TransitionFourCoroutine (), 0.5f);
+        } else if (this.nextLevel == 5) {
+            terminal.AddAction(TransitionFiveCoroutine (), 0.5f);
+        }
+    }
 }

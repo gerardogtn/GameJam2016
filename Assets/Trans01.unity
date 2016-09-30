@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.57508564, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692492, g: 0.4967869, b: 0.57508546, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ GameObject:
   - 114: {fileID: 407351143}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: terminalText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -758,6 +758,7 @@ GameObject:
   - 223: {fileID: 1352150010}
   - 114: {fileID: 1352150009}
   - 114: {fileID: 1352150008}
+  - 114: {fileID: 1352150012}
   m_Layer: 5
   m_Name: CanvasVisor
   m_TagString: Untagged
@@ -844,6 +845,80 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1352150012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352150007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9702a5cc8f0444989150f6fa30e2261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: 1
+  moveToLevel: 1
+  messages:
+  - keyboardMessage: '>Light source detected'
+    controllerMessage: 
+    totalDuration: 1
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>Running diagnostics'
+    controllerMessage: 
+    totalDuration: 1
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>[################################]100% '
+    controllerMessage: 
+    totalDuration: 8
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>Warning: Sunlight-collecting system damaged '
+    controllerMessage: 
+    totalDuration: 0.5
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>Stronger light source needed '
+    controllerMessage: 
+    totalDuration: 0.5
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>Warning: Missing primary disk partition '
+    controllerMessage: 
+    totalDuration: 0.5
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>Battery status: damaged '
+    controllerMessage: 
+    totalDuration: 0.5
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>Data recovery initiated. . . '
+    controllerMessage: 
+    totalDuration: 0.5
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>Attempting disk image restoration '
+    controllerMessage: 
+    totalDuration: 0.5
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>[################################]100% '
+    controllerMessage: 
+    totalDuration: 9
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>Disk restored with 93 warnings '
+    controllerMessage: 
+    totalDuration: 1
+    beforeTime: 0
+    afterTime: 0
+  - keyboardMessage: '>Booting R.A.Y._Protocol_v1.7 . . . '
+    controllerMessage: 
+    totalDuration: 2
+    beforeTime: 0
+    afterTime: 2
 --- !u!1 &1493498760
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +930,6 @@ GameObject:
   - 224: {fileID: 1493498761}
   - 222: {fileID: 1493498763}
   - 114: {fileID: 1493498762}
-  - 114: {fileID: 1493498764}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -919,79 +993,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1493498760}
---- !u!114 &1493498764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1493498760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380fda49112b54a50bfd6db258628dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messages:
-  - keyboardMessage: '>Light source detected'
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Running diagnostics'
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>[################################]100% '
-    controllerMessage: 
-    totalDuration: 8
-    beforeTime: 0
-    afterTime: 0.5
-  - keyboardMessage: '>Warning: Sunlight-collecting system damaged '
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Stronger light source needed '
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Warning: Missing primary disk partition '
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Battery status: damaged '
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Data recovery initiated. . . '
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 1
-  - keyboardMessage: '>Attempting disk image restoration '
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>[################################]100% '
-    controllerMessage: 
-    totalDuration: 9
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Disk restored with 93 warnings '
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Booting R.A.Y._Protocol_v1.7 . . . '
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 3
-  isSwitch: 0
 --- !u!1 &1534214777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,84 +1056,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!1 &1985605860 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000014030980512, guid: a45c0b5c920fb4f7e91bbd2a12de5201,
-    type: 2}
-  m_PrefabInternal: {fileID: 836286942}
---- !u!114 &1985605864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1985605860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9702a5cc8f0444989150f6fa30e2261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextLevel: 1
-  messages:
-  - keyboardMessage: '>Light source detected'
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Running diagnostics'
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>[################################]100% '
-    controllerMessage: 
-    totalDuration: 8
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Warning: Sunlight-collecting system damaged '
-    controllerMessage: 
-    totalDuration: 0.5
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Stronger light source needed '
-    controllerMessage: 
-    totalDuration: 0.5
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Warning: Missing primary disk partition '
-    controllerMessage: 
-    totalDuration: 0.5
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Battery status: damaged '
-    controllerMessage: 
-    totalDuration: 0.5
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Data recovery initiated. . . '
-    controllerMessage: 
-    totalDuration: 0.5
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Attempting disk image restoration '
-    controllerMessage: 
-    totalDuration: 0.5
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>[################################]100% '
-    controllerMessage: 
-    totalDuration: 9
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Disk restored with 93 warnings '
-    controllerMessage: 
-    totalDuration: 1
-    beforeTime: 0
-    afterTime: 0
-  - keyboardMessage: '>Booting R.A.Y._Protocol_v1.7 . . . '
-    controllerMessage: 
-    totalDuration: 2
-    beforeTime: 0
-    afterTime: 2
 --- !u!1 &2104732186
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,11 @@ public class SceneTransitionManager {
 		}
 		return Instance;
 	}
+       
+    public void resetLevel()
+    {        
+        GoTo(SceneManager.GetActiveScene().buildIndex);
+    }
 
 	public void Reload() {
 		GoTo (current);

@@ -20,6 +20,7 @@ public class CoroutineQueue
     public void StopLoop()
     {
         m_Owner.StopCoroutine(m_InternalCoroutine);
+        m_Owner.StopAllCoroutines();
         m_InternalCoroutine = null;
     }
 

@@ -14,9 +14,9 @@ public class AutoWrite : MonoBehaviour {
     [SerializeField]
     float waitTimeAfterDefault = 0.0f;
 
-    AudioManager audioManager;   
+    AudioManager audioManager;
 
-    private CoroutineQueue coroutineQueue;
+    public CoroutineQueue coroutineQueue;
 
     public static AutoWrite instance = null;
 
@@ -34,10 +34,15 @@ public class AutoWrite : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
+    void OnLevelWasLoaded()
+    {
+        textArea = GameObject.FindGameObjectWithTag("terminalText").gameObject.GetComponent<Text>();
+        coroutineQueue = new CoroutineQueue(this);
+        coroutineQueue.StartLoop();
+    }
+
 	void Start(){
-	
 		audioManager = AudioManager.instance;
-	
 	}
 
     public void WriteToTerminal(string text, bool newLine, float? _totalDuration = null ,  float? _waitTimeBefore = null, 
