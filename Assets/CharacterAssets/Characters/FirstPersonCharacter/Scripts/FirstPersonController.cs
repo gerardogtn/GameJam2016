@@ -212,12 +212,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-			if(Input.GetJoystickNames().Length > 0 ) {
-				m_IsWalking = Input.GetAxis("Run Axis2") <= -1f || Input.GetAxis("Run Axis2") == 0f;
-			} else {
-				m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
-			}
-//			m_IsWalking = !(Input.GetAxis("Run Axis") > 0.1 || Input.GetKey(KeyCode.LeftShift));
+			bool isJoystickRunning = Input.GetAxis("Run Axis2") > -1f && Input.GetAxis("Run Axis2") != 0f;
+			bool isKeyboardRunning = Input.GetKey(KeyCode.LeftShift);
+			m_IsWalking = ! (isJoystickRunning || isKeyboardRunning);
+
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
