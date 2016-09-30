@@ -22,6 +22,7 @@ public class AutoWrite : MonoBehaviour {
 
     void Awake()
     {
+		Application.targetFrameRate = 300;
         if (instance == null)
         {
             instance = this;
@@ -40,8 +41,10 @@ public class AutoWrite : MonoBehaviour {
         
 	
 	// Update is called once per frame
-	void Update () {
-	    
+	void Start () {
+		audioManager = AudioManager.instance;
+		coroutineQueue = new CoroutineQueue(this);
+		coroutineQueue.StartLoop();
 	}
 
     public void WriteToTerminal(string text, float? _totalDuration = null ,  float? _waitTimeBefore = null, 
