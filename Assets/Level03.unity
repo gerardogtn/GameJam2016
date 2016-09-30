@@ -1334,6 +1334,23 @@ Prefab:
     - {fileID: 114000012434546186, guid: 547c4b3d57d784d2b8856690d509bd1a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 547c4b3d57d784d2b8856690d509bd1a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &24317485 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012292555938, guid: 547c4b3d57d784d2b8856690d509bd1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 24317484}
+--- !u!114 &24317486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 24317485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14934e9193584de69993f1c244d2a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: 4
 --- !u!1 &37558285
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,6 +5940,11 @@ Prefab:
       propertyPath: m_SpotAngle
       value: 109.11033
       objectReference: {fileID: 0}
+    - target: {fileID: 136000013330495954, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.59727955
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000012910150762, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
@@ -7769,7 +7791,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-127576
+  m_Name: pb_Mesh46208
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -8380,7 +8402,7 @@ Prefab:
     - target: {fileID: 224000010798537110, guid: 9ccfab9055dd74a579fe2741d9b4a767,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000045776367
+      value: 0.000020980835
       objectReference: {fileID: 0}
     - target: {fileID: 224000010798537110, guid: 9ccfab9055dd74a579fe2741d9b4a767,
         type: 2}
@@ -20203,7 +20225,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh91460
+  m_Name: pb_Mesh53474
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -29440,7 +29462,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedWireframeHidden: 1
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89

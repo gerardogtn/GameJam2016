@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class FullScreenSender : MonoBehaviour {
 
     public int nextLevel; 
-    public bool moveToLevel = true;
+    public bool moveToLevel = false;
 
     AutoWrite terminal;
     [System.Serializable]   
@@ -25,13 +25,14 @@ public class FullScreenSender : MonoBehaviour {
         terminal = AutoWrite.instance;
         sendMessages();
         if (moveToLevel)
-        {
+        {            
+            Debug.Log("HOLA");
             sendGoToNextLevel();
         }
-        else
-        {
-            sendGoToNextTransition();
-        }
+//        else
+//        {
+//            sendGoToNextTransition();
+//        }
     }
         
     void sendMessages()

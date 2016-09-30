@@ -78,5 +78,6 @@ public class SceneTransitionManager {
 	private void GoTo(int buildIndex) {
 		current = buildIndex;
 		SceneManager.LoadScene (buildIndex);
+        LevelManager.getInstance().setColor(Colors.Black);
 	}
 }
