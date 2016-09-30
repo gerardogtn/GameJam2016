@@ -30,21 +30,26 @@ public class MovingPlatform : MonoBehaviour {
         }     
     }
 
+	void Awake()
+	{
+		currentPos = 0;
+		dir = 1;  
+		Material mat = Resources.Load<Material>("Materials/line");
+		if (!gameObject.GetComponent<LineRenderer>())
+		{
+			gameObject.AddComponent<LineRenderer>();
+			lineRenderer = gameObject.GetComponent<LineRenderer>();
+			lineRenderer.SetWidth(0.2f, 0.2f);
+			lineRenderer.material = mat;
+		}
+		lineRenderer = gameObject.GetComponent<LineRenderer>();
+		setLines();
+		setDestination(endPoints[currentPos]);
+	}
+
     void Start()
     {
-        currentPos = 0;
-        dir = 1;
-        Material mat = Resources.Load<Material>("Materials/line");
-        if (!gameObject.GetComponent<LineRenderer>())
-        {
-            gameObject.AddComponent<LineRenderer>();
-            lineRenderer = gameObject.GetComponent<LineRenderer>();
-            lineRenderer.SetWidth(0.2f, 0.2f);
-            lineRenderer.material = mat;
-        }
-        lineRenderer = gameObject.GetComponent<LineRenderer>();
-        setLines();
-        setDestination(endPoints[currentPos]);
+              
     }      
 
     void setLines()

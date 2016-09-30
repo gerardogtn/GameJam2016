@@ -27,13 +27,13 @@ public class ColoredMovingPlatform : ColorReceiver {
 
 
 	private void Enable() {
-		lineRenderer.enabled = true; 
+//		lineRenderer.enabled = true; 
 		meshCollider.enabled = true;
 		meshRenderer.enabled = true;
 	}
 
 	private void Disable() {
-		lineRenderer.enabled = false;
+//		lineRenderer.enabled = false;
 		meshCollider.enabled = false;
 		meshRenderer.enabled = false;
 	}
