@@ -30,7 +30,6 @@ public class ColoredSwitchesManager {
 		return instance;
 	}
 
-
 	public bool IsOn(Colors color) {
 		return colorStatus [color];
 	}
